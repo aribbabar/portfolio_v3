@@ -1,0 +1,91 @@
+.container::before {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: var(--primary-accent-color);
+  z-index: -1;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container > h2 {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--primary-color);
+  border: 3px solid #fff;
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutTitle {
+  padding: 0.3rem;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  border-radius: var(--border-radius);
+  margin-right: 0.3rem;
+}
+
+.container > p {
+  padding: 1rem;
+  line-height: 20px;
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  line-height: 25px;
+}
+
+.container > h3 {
+  margin: 0.5rem 0;
+}
+
+.skillsContainerGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.skillsContainer {
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+}
+
+.skillsContainer > h3 {
+  text-align: center;
+}
+
+.skillsContainer ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.skillsContainer ul li {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  color: #fff;
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+}
+
+@media screen and (min-width: 448px) {
+  .skillsContainer:nth-child(3) {
+    grid-column: span 2;
+  }
+}

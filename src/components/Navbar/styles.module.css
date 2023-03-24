@@ -1,0 +1,66 @@
+@import "animate.css";
+
+nav {
+  position: sticky;
+  bottom: 0;
+}
+
+nav > ul {
+  padding: 0.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--secondary-color);
+  color: var(--text-color-dark);
+  list-style: none;
+}
+
+nav > ul > li {
+  padding: 1rem;
+  position: relative;
+  color: var(--text-color-light);
+  font-size: 14px;
+  text-align: center;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  z-index: 1;
+}
+
+nav > ul > li > .material-icons {
+  display: block;
+  text-align: center;
+}
+
+.highlighted {
+  color: var(--text-color-light);
+}
+
+.highlighted::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  z-index: -1;
+  animation: zoomIn;
+  animation-duration: 0.2s;
+}
+
+.notHighlighted::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  z-index: -1;
+  animation: zoomOut forwards;
+  animation-duration: 1s;
+}
