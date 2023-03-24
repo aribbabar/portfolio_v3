@@ -52,6 +52,7 @@ function About() {
           <ul>
             <li onClick={createRipple}>Node</li>
             <li onClick={createRipple}>C#</li>
+            <li onClick={createRipple}>Java</li>
           </ul>
         </div>
         <div className={styles.skillsContainer}>
