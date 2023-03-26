@@ -7,13 +7,11 @@ function Home() {
   const [cells, setCells] = useState<number[]>([]);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  let columns: number;
-  let rows: number;
-
   useEffect(() => {
     function createGrid() {
-      columns = Math.floor(document.body.clientWidth / 50);
-      rows = Math.floor(document.body.clientHeight / 50);
+      let columns = Math.floor(document.body.clientWidth / 50);
+      let rows = Math.floor(document.body.clientHeight / 50);
+
       setCells(Array(columns * rows).fill(0));
 
       gridRef.current?.style.setProperty("--columns", columns.toString());
@@ -28,6 +26,9 @@ function Home() {
   function playAnimation(i: number) {
     if (animationRef.current?.remaining) return;
 
+    let columns = Math.floor(document.body.clientWidth / 50);
+    let rows = Math.floor(document.body.clientHeight / 50);
+
     animationRef.current = anime({
       targets: ".cell",
       scale: [
@@ -36,7 +37,8 @@ function Home() {
       ],
       direction: "alternate",
       easing: "easeOutElastic(1, .6)",
-      delay: anime.stagger(5, {
+      delay: anime.stagger(70, {
+        grid: [columns, rows],
         from: i
       })
     });
